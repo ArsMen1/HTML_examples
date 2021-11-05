@@ -1,0 +1,49 @@
+.galery {
+  padding: 20px;
+  border: 1px solid #cccccc;
+  width: 500px;
+  margin: 10px auto;
+  height: 380px;
+}
+
+.big {
+  background-image: url(https://i.gifer.com/AqCa.gif);
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  width: 500px;
+  height: 280px;
+  border: 1px dotted #cccccc;
+}
+
+.small {
+  margin-top: 10px;
+  margin-left: 33px;
+}
+
+.small a img {
+  border: none;
+  width: 100px;
+  height: 100px;
+}
+
+.small a img:hover {
+  border: none;
+  width: 140px;
+  height: 100px;
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  width: 50px;
+  font-size: 30px;
+  font-weight: bold;
+  border: 2px solid black;
+  border-radius: 50%;
+}
+
+.btn:hover {
+  cursor: pointer;
+}

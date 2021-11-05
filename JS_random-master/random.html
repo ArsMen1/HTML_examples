@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Random</title>
+    <script src="random.js"></script>
+    <link rel="stylesheet" href="random.css">
+  </head>
+  <body>
+    <div class="content">
+      <div class="Header">
+        <h1 class="Random">Генератор случайных чисел</h1>
+      </div>
+      <div class="AllPOle">
+        <div class="minMax">
+          <div class="min">
+            От:
+            <input type="text" class="start" value='1' />
+          </div>
+          <div class="max">
+            До:
+            <input type="text" class="end" />
+          </div>
+        </div>
+        <div class="quant">
+          <div class="quantText">
+            <div>Количество чисел:</div>
+            <div class="Result">
+              Результат:
+              <p id="pole"></p>
+            </div>
+          </div>
+        </div>
+        <button
+          class="PlusMinus"
+          type="button"
+          onclick="this.nextElementSibling.stepDown()"
+        >
+          —
+        </button>
+
+        <input
+          type="number"
+          min="0"
+          max="100"
+          value="1"
+          readonly
+          class="quantity"
+        />
+        <button
+          class="PlusMinus"
+          type="button"
+          onclick="this.previousElementSibling.stepUp()"
+        >
+          +
+        </button>
+        <div>
+          <button class="startBtn" onclick="getRandomNumber()">СТАРТ</button>
+        </div>
+    </div>
+  </body>
+</html>
