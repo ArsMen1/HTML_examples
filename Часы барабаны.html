@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		@import url("https://fonts.googleapis.com/css?family=Anton");
+
+		body {
+			background-color: #2e282a;
+			font-family: "Anton", sans-serif;
+		}
+
+		.container {
+			position: fixed;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			text-align: center;
+			transform: rotateX(-90deg);
+			transform-style: preserve-3d;
+		}
+
+		.numbers {
+			height: 200px;
+			width: 50px;
+			padding: 0;
+			position: relative;
+			margin: auto;
+			list-style-type: none;
+			transform-style: preserve-3d;
+			transform: rotateY(90deg);
+			transition: all ease 0.5s;
+			display: inline-block;
+		}
+
+		.numbers li {
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			margin: auto;
+			height: 50%;
+			width: 0;
+			transform-style: preserve-3d;
+			transform-origin: bottom;
+			box-sizing: border-box;
+		}
+
+		.numbers li span {
+			height: 50px;
+			width: 50px;
+			display: inline-block;
+			border-radius: 2px;
+			text-align: center;
+			font-size: 5rem;
+			line-height: 50px;
+			backface-visibility: hidden;
+			transform-style: preserve-3d;
+			transform: translateX(-50%) translateY(-40px) rotateX(90deg) rotate(90deg);
+		}
+
+		.numbers li:nth-child(1) {
+			transform: rotate(0deg);
+		}
+
+		.numbers li:nth-child(2) {
+			transform: rotate(-36deg);
+		}
+
+		.numbers li:nth-child(3) {
+			transform: rotate(-72deg);
+		}
+		.numbers li:nth-child(4) {
+			transform: rotate(-108deg);
+		}
+		.numbers li:nth-child(5) {
+			transform: rotate(-144deg);
+		}
+		.numbers li:nth-child(6) {
+			transform: rotate(-180deg);
+		}
+		.numbers li:nth-child(7) {
+			transform: rotate(-216deg);
+		}
+		.numbers li:nth-child(8) {
+			transform: rotate(-252deg);
+		}
+		.numbers li:nth-child(9) {
+			transform: rotate(-288deg);
+		}
+		.numbers li:nth-child(10) {
+			transform: rotate(-324deg);
+		}
+		.numbers.hours li span {
+			color: #fff;
+		}
+		.numbers.minutes li span {
+			color: #fff;
+		}
+		.numbers.seconds li span {
+			color: #fff;
+		}
+
+	</style>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+	<div class="container">
+		<ul class="numbers hours hoursFirst">
+			<li><span>0</span></li>
+			<li><span>1</span></li>
+			<li><span>2</span></li>
+			<li><span>3</span></li>
+			<li><span>4</span></li>
+			<li><span>5</span></li>
+			<li><span>6</span></li>
+			<li><span>7</span></li>
+			<li><span>8</span></li>
+			<li><span>9</span></li>
+		</ul>
+		<ul class="numbers hours hoursLast">
+			<li><span>0</span></li>
+			<li><span>1</span></li>
+			<li><span>2</span></li>
+			<li><span>3</span></li>
+			<li><span>4</span></li>
+			<li><span>5</span></li>
+			<li><span>6</span></li>
+			<li><span>7</span></li>
+			<li><span>8</span></li>
+			<li><span>9</span></li>
+		</ul>
+		<ul class="numbers minutes minutesFirst">
+			<li><span>0</span></li>
+			<li><span>1</span></li>
+			<li><span>2</span></li>
+			<li><span>3</span></li>
+			<li><span>4</span></li>
+			<li><span>5</span></li>
+			<li><span>6</span></li>
+			<li><span>7</span></li>
+			<li><span>8</span></li>
+			<li><span>9</span></li>
+		</ul>
+		<ul class="numbers minutes minutesLast">
+			<li><span>0</span></li>
+			<li><span>1</span></li>
+			<li><span>2</span></li>
+			<li><span>3</span></li>
+			<li><span>4</span></li>
+			<li><span>5</span></li>
+			<li><span>6</span></li>
+			<li><span>7</span></li>
+			<li><span>8</span></li>
+			<li><span>9</span></li>
+		</ul>
+
+
+		<ul class="numbers seconds secondsFirst">
+			<li><span>0</span></li>
+			<li><span>1</span></li>
+			<li><span>2</span></li>
+			<li><span>3</span></li>
+			<li><span>4</span></li>
+			<li><span>5</span></li>
+			<li><span>6</span></li>
+			<li><span>7</span></li>
+			<li><span>8</span></li>
+			<li><span>9</span></li>
+		</ul>
+		<ul class="numbers seconds secondsLast">
+			<li><span>0</span></li>
+			<li><span>1</span></li>
+			<li><span>2</span></li>
+			<li><span>3</span></li>
+			<li><span>4</span></li>
+			<li><span>5</span></li>
+			<li><span>6</span></li>
+			<li><span>7</span></li>
+			<li><span>8</span></li>
+			<li><span>9</span></li>
+		</ul>
+	</div><div id="timedate">
+		<a id="mon">January</a>
+		<a id="d">1</a>,
+		<a id="y">0</a><br />
+		<a id="h">12</a> :
+		<a id="m">00</a>:
+		<a id="s">00</a>:
+		<a id="mi">000</a>
+	</div>
+	<script>$(document).ready(function(){
+
+		const getFirstDigit = (x) => parseInt(x/10);
+		const getLastDigit = (x) => parseInt(x%10);
+
+		setInterval(()=>{
+			var today = new Date();
+			var hours = today.getHours();
+			var minutes = today.getMinutes();
+			var seconds = today.getSeconds();
+
+			$(".secondsLast").css({
+				'transform':'rotateY(90deg) rotate('+getLastDigit(seconds)*36+'deg)',
+			});
+			$(".secondsFirst").css({
+				'transform':'rotateY(90deg) rotate('+getFirstDigit(seconds)*36+'deg)',
+			});
+
+			$(".minutesLast").css({
+				'transform':'rotateY(90deg) rotate('+getLastDigit(minutes)*36+'deg)',
+			});
+			$(".minutesFirst").css({
+				'transform':'rotateY(90deg) rotate('+getFirstDigit(minutes)*36+'deg)',
+			});
+
+			$(".hoursLast").css({
+				'transform':'rotateY(90deg) rotate('+getLastDigit(hours)*36+'deg)',
+			});
+			$(".hoursFirst").css({
+				'transform':'rotateY(90deg) rotate('+getFirstDigit(hours)*36+'deg)',
+			});
+
+		},1000);
+	});
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</body>
+</html>
